@@ -11,29 +11,29 @@ const contactInfo = [
     id: 'contact-email',
     icon: Mail,
     label: 'Email',
-    value: 'dilshanthilina1010@gmail.com',
-    href: 'mailto:dilshanthilina1010@gmail.com',
+    value: 'ruvinda.dev@gmail.com',
+    href: 'mailto:ruvinda.dev@gmail.com',
   },
   {
     id: 'contact-phone',
     icon: Phone,
     label: 'Phone',
-    value: '+94 766 497 071',
-    href: 'tel:+94766497071',
+    value: '+94 76 906 3040',
+    href: 'tel:+94769063040',
   },
   {
     id: 'contact-linkedin',
     icon: LinkIcon,
     label: 'LinkedIn',
-    value: 'linkedin.com/in/thilina-dilshan-fernando-2a0539390',
-    href: 'https://www.linkedin.com/in/thilina-dilshan-fernando-2a0539390/?trk=public-profile-badge-profile-badge-view-profile-cta',
+    value: 'linkedin.com/in/ruvinda-shaluka-perera-564207325',
+    href: 'https://www.linkedin.com/in/ruvinda-shaluka-perera-564207325',
   },
   {
     id: 'contact-github',
     icon: GitFork,
     label: 'GitHub',
-    value: 'github.com/thilina-fer',
-    href: 'https://github.com/thilina-fer',
+    value: 'github.com/Ruvinda-Shaluka',
+    href: 'https://github.com/Ruvinda-Shaluka',
   },
 ]
 
@@ -130,8 +130,8 @@ export default function Contact() {
           {/* Right: Transparent Image Area (Absolute) */}
           <div className="absolute right-0 bottom-0 w-1/3 h-full pointer-events-none opacity-40 sm:opacity-80 flex items-end justify-end">
              <Image 
-               src="/article/profile.png" 
-               alt="Thilina Dilshan" 
+               src="/article/ruvinda-profile.jpg" 
+               alt="Ruvinda Shaluka" 
                fill 
                className="object-contain object-right-bottom mix-blend-lighten filter grayscale"
              />

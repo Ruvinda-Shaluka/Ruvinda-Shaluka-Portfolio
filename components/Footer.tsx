@@ -1,14 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedinIn, FaMediumM, FaFacebookF, FaInstagram } from 'react-icons/fa'
+import { FaGithub, FaLinkedinIn, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
 const socials = [
-  { label: 'GitHub', href: 'https://github.com/thilina-fer', icon: FaGithub },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/thilina-dilshan-fernando-2a0539390/?trk=public-profile-badge-profile-badge-view-profile-cta', icon: FaLinkedinIn },
-  { label: 'Medium', href: 'https://medium.com/@dilshanthilina1010', icon: FaMediumM },
-  { label: 'Facebook', href: 'https://www.facebook.com/thilina.dilshan.74172', icon: FaFacebookF },
-  { label: 'Instagram', href: 'https://www.instagram.com/_thilina.dilshan__/', icon: FaInstagram },
+  { label: 'GitHub', href: 'https://github.com/Ruvinda-Shaluka', icon: FaGithub },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ruvinda-shaluka-perera-564207325', icon: FaLinkedinIn },
+  { label: 'Facebook', href: 'https://www.facebook.com/share/1PapqsrSwN/', icon: FaFacebookF },
+  { label: 'Instagram', href: 'https://www.instagram.com/mr.shalu_ka?igsh=cm9ua3FtOWI2c2I5', icon: FaInstagram },
 ]
 
 export default function Footer() {
@@ -52,7 +51,7 @@ export default function Footer() {
             className="text-[16vw] leading-none font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-white/80 to-[#050507] tracking-tighter select-none"
             style={{ WebkitTextStroke: '1px rgba(255,255,255,0.05)' }}
           >
-            DILSHAN
+            RUVINDA
           </h1>
         </div>
 

@@ -116,7 +116,7 @@ export default function Hero() {
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-none uppercase drop-shadow-lg"
             >
-              Thilina Dilshan
+              Ruvinda Shaluka
             </motion.h1>
           </div>
 

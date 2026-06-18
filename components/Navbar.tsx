@@ -33,7 +33,7 @@ export default function Navbar() {
   })
 
   const handleScroll = useCallback(() => {
-    const sections = ['hero', 'about', 'skills', 'projects', 'writing', 'contact']
+    const sections = ['hero', 'about', 'skills', 'projects', 'contact']
     const scrollPos = window.scrollY + 120
 
     for (const id of sections.reverse()) {

@@ -34,8 +34,7 @@ function CountUp({ target, suffix, trigger }: { target: number; suffix: string; 
 
 
 const stats = [
-  { value: 2, suffix: '+', label: 'Projects' },
-  { value: 10, suffix: '+', label: 'Articles' },
+  { value: 5, suffix: '+', label: 'Projects' },
   { value: 6, suffix: '+', label: 'Tech Stack' },
 ]
 
@@ -82,7 +81,7 @@ export default function About() {
             className="flex items-center gap-4 mb-10"
           >
             <span className="w-8 h-[2px] bg-[#3b82f6]" />
-            <span className="text-[#94a3b8] text-xs font-semibold tracking-widest lowercase">thilinadilshan1010@gmail.com</span>
+            <span className="text-[#94a3b8] text-xs font-semibold tracking-widest lowercase">ruvinda.dev@gmail.com</span>
           </motion.div>
 
           {/* Description */}
@@ -94,7 +93,7 @@ export default function About() {
             className="text-[#94a3b8] text-sm sm:text-base leading-relaxed mb-16"
           >
             <p className="mb-4">
-              My name is Thilina Dilshan. I am a Full-Stack Engineer undergrad with a passion for building scalable, high-performance software. I specialize in shipping production-grade backends with <span className="text-white font-medium">Java & Spring Boot</span>, and crafting clean, dynamic <span className="text-white font-medium">React</span> frontends.
+              My name is Ruvinda Shaluka. I am a Full-Stack Engineer undergrad with a passion for building scalable, high-performance software. I specialize in shipping production-grade backends with <span className="text-white font-medium">Java & Spring Boot</span>, and crafting clean, dynamic <span className="text-white font-medium">React</span> frontends.
             </p>
             <p>
               My greatest strength is architectural awareness, which enables me to permanently streamline infrastructure and applications. I am enthusiastic, always trying to learn, and I love creating products that are truly high-quality and unique. I also share my technical journey and insights by writing articles on Medium.
@@ -136,8 +135,8 @@ export default function About() {
           {/* Using next/image for portrait */}
           <div className="relative w-full h-full max-w-2xl">
             <Image
-              src="/article/profile.png"
-              alt="Thilina Dilshan"
+              src="/article/ruvinda-profile.jpg"
+              alt="Ruvinda Shaluka"
               fill
               className="object-contain lg:object-cover object-center lg:object-right opacity-80 mix-blend-lighten filter grayscale hover:grayscale-0 transition-all duration-700"
               sizes="(max-width: 1024px) 100vw, 50vw"

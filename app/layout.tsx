@@ -10,16 +10,15 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://thilina-dilshan-fernando-next-js-tixh.vercel.app'), // Live Vercel URL
+  metadataBase: new URL('https://ruvinda-shaluka.vercel.app'), // Live Vercel URL
   title: {
-    default: 'Thilina Dilshan Fernando — Full-Stack Developer & SaaS Builder',
-    template: '%s | Thilina Dilshan Fernando'
+    default: 'Ruvinda Shaluka — Full-Stack Developer & SaaS Builder',
+    template: '%s | Ruvinda Shaluka Portfolio',
   },
   description:
-    'Portfolio of Thilina Dilshan Fernando, a Software Engineering undergraduate at IJSE specializing in Full-Stack Web Development, Mobile Apps, Java, Spring Boot, React, and Node.js.',
+    'Portfolio of Ruvinda Shaluka, a Software Engineering undergraduate at IJSE specializing in Full-Stack Web Development, Mobile Apps, Java, Spring Boot, React, and Node.js.',
   keywords: [
-    'Thilina Fernando',
-    'Thilina Dilshan',
+    'Ruvinda Shaluka',
     'Full-Stack Developer Sri Lanka',
     'Frontend Developer',
     'Backend Developer',
@@ -31,19 +30,19 @@ export const metadata: Metadata = {
     'Web Developer Portfolio',
     'SaaS Builder',
   ],
-  authors: [{ name: 'Thilina Dilshan Fernando', url: 'https://github.com/thilina-fer' }],
-  creator: 'Thilina Dilshan Fernando',
+  authors: [{ name: 'Ruvinda Shaluka', url: 'https://github.com/Ruvinda-Shaluka' }],
+  creator: 'Ruvinda Shaluka',
   openGraph: {
-    title: 'Thilina Dilshan Fernando — Full-Stack Developer',
+    title: 'Ruvinda Shaluka — Full-Stack Developer',
     description: 'Building production-grade full-stack applications with Java, Spring Boot, React & Node.js.',
-    url: 'https://thilina-dilshan-fernando-next-js-tixh.vercel.app',
-    siteName: 'Thilina Dilshan Fernando Portfolio',
+    url: 'https://ruvinda-shaluka.vercel.app',
+    siteName: 'Ruvinda Shaluka Portfolio',
     images: [
       {
-        url: '/article/profile.png', // Replace with a generic OG image if available
+        url: '/article/ruvinda-profile.jpg', // Replace with a generic OG image if available
         width: 1200,
         height: 630,
-        alt: 'Thilina Dilshan Fernando Profile',
+        alt: 'Ruvinda Shaluka Profile',
       },
     ],
     type: 'website',
@@ -51,9 +50,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Thilina Dilshan Fernando — Full-Stack Developer',
+    title: 'Ruvinda Shaluka — Full-Stack Developer',
     description: 'Building production-grade full-stack applications with Java, Spring Boot, React & Node.js.',
-    images: ['/article/profile.png'],
+    images: ['/article/ruvinda-profile.jpg'],
   },
   robots: {
     index: true,
