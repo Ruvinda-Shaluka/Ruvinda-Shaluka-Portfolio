@@ -83,7 +83,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Image src="/logo.svg" alt="Logo" width={42} height={42} className="drop-shadow-[0_0_8px_rgba(59,130,246,0.4)]" />
+              <Image src="/logo/keyboard-r.png" alt="Logo" width={42} height={42} className="drop-shadow-[0_0_8px_rgba(59,130,246,0.4)] object-contain" />
             </motion.button>
 
             {/* Desktop Nav (Right) */}

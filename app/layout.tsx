@@ -32,6 +32,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Ruvinda Shaluka', url: 'https://github.com/Ruvinda-Shaluka' }],
   creator: 'Ruvinda Shaluka',
+  icons: {
+    icon: '/logo/letter-r.png',
+  },
   openGraph: {
     title: 'Ruvinda Shaluka — Full-Stack Developer',
     description: 'Building production-grade full-stack applications with Java, Spring Boot, React & Node.js.',
