@@ -123,7 +123,7 @@ export default function Projects() {
           </AnimatePresence>
 
           {/* Left Side: Active Project Details */}
-          <div className="relative z-10 flex-1 p-6 sm:p-12 pt-32 lg:pt-12 flex flex-col justify-end lg:justify-center min-h-[500px] lg:min-h-0">
+          <div className="relative z-10 flex-1 p-6 sm:p-12 pt-32 lg:pt-12 flex flex-col justify-end lg:justify-center min-h-[400px] py-16 lg:py-12 lg:min-h-0">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeProject.id}
@@ -145,7 +145,7 @@ export default function Projects() {
                   {activeProject.tag}
                 </p>
                 
-                <p className="text-sm sm:text-base text-[#94a3b8] leading-relaxed mb-6 sm:mb-8 max-w-xl">
+                <p className="text-sm sm:text-base text-[#cbd5e1] leading-relaxed mb-6 sm:mb-8 max-w-xl">
                   {activeProject.description}
                 </p>
                 
@@ -164,7 +164,7 @@ export default function Projects() {
                     href={activeProject.liveUrl} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className={`flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-bold transition-all hover:scale-105 active:scale-95 ${activeProject.btnTheme}`}
+                    className={`flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-bold transition-all hover:scale-105 active:scale-95 focus:outline-none ${activeProject.btnTheme}`}
                   >
                     <ExternalLink size={16} />
                     Explore Project
@@ -175,7 +175,7 @@ export default function Projects() {
                       href={activeProject.githubFrontendUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-bold text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all hover:scale-105 active:scale-95 backdrop-blur-md"
+                      className="flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-bold text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all hover:scale-105 active:scale-95 backdrop-blur-md focus:outline-none"
                     >
                       <GitFork size={16} />
                       Frontend Code
@@ -187,7 +187,7 @@ export default function Projects() {
                       href={activeProject.githubBackendUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-bold text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all hover:scale-105 active:scale-95 backdrop-blur-md"
+                      className="flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-bold text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all hover:scale-105 active:scale-95 backdrop-blur-md focus:outline-none"
                     >
                       <GitFork size={16} />
                       Backend Code
@@ -200,7 +200,7 @@ export default function Projects() {
                       href={activeProject.githubUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-bold text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all hover:scale-105 active:scale-95 backdrop-blur-md"
+                      className="flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-bold text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all hover:scale-105 active:scale-95 backdrop-blur-md focus:outline-none"
                     >
                       <GitFork size={16} />
                       Source Code

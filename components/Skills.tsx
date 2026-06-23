@@ -158,7 +158,7 @@ export default function Skills() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-[#94a3b8] text-lg sm:text-xl mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+            className="text-[#cbd5e1] text-lg sm:text-xl mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
           >
             Drag and interact with the sphere to explore the languages, frameworks, and tools I use to build robust, scalable, and visually stunning applications.
           </motion.p>

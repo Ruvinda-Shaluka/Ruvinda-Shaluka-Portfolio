@@ -136,9 +136,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-[#94a3b8] text-sm sm:text-base leading-relaxed mb-8"
+            className="text-[#cbd5e1] text-sm sm:text-base md:text-lg leading-relaxed mb-8 max-w-xl"
           >
-            I specialize in building scalable, production-grade applications from the ground up. Whether it&apos;s crafting robust backend architectures or designing intuitive mobile and web interfaces, I turn complex problems into elegant solutions.
+            I build high-performance, secure full-stack applications and SaaS platforms that drive business value. Specializing in Java, Spring Boot, React, and Next.js, I turn complex engineering requirements into clean, scalable software.
           </motion.p>
 
           {/* CTA buttons */}
@@ -152,7 +152,7 @@ export default function Hero() {
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2.5 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-semibold rounded-full text-sm tracking-wide transition-colors shadow-[0_0_30px_rgba(59,130,246,0.4)] border border-[#3b82f6]/50"
+              className="px-7 py-3 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl text-sm sm:text-base tracking-wide transition-all shadow-[0_0_30px_rgba(59,130,246,0.5)] border border-[#3b82f6]/50 cursor-pointer focus:outline-none"
             >
               View My Work
             </motion.button>
@@ -160,7 +160,7 @@ export default function Hero() {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2.5 border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 backdrop-blur-md text-white font-semibold rounded-full text-sm tracking-wide transition-all shadow-lg"
+              className="px-7 py-3 border border-white/10 hover:border-white/30 bg-transparent hover:bg-white/5 text-[#cbd5e1] hover:text-white font-medium rounded-xl text-sm sm:text-base tracking-wide transition-all cursor-pointer focus:outline-none"
             >
               Get In Touch
             </motion.button>

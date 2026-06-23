@@ -63,26 +63,28 @@ export default function About() {
         <div className="flex-1 w-full max-w-xl relative z-20">
           
           {/* Header */}
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-2"
-          >
-            ABOUT
-          </motion.h2>
-          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex items-center gap-4 mb-10"
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-3 mb-4"
           >
-            <span className="w-8 h-[2px] bg-[#3b82f6]" />
-            <span className="text-[#94a3b8] text-xs font-semibold tracking-widest lowercase">ruvinda.dev@gmail.com</span>
+            <div className="w-8 h-px bg-[#e2e8f0]" />
+            <span className="text-[#93c5fd] text-sm font-semibold tracking-widest uppercase">
+              About Me
+            </span>
           </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-8"
+          >
+            My <span className="gradient-text">Story</span>
+          </motion.h2>
 
           {/* Description */}
           <motion.div
@@ -90,13 +92,13 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[#94a3b8] text-sm sm:text-base leading-relaxed mb-16"
+            className="text-[#cbd5e1] text-sm sm:text-base leading-relaxed mb-16"
           >
             <p className="mb-4">
-              My name is Ruvinda Shaluka. I am a Full-Stack Engineer undergrad with a passion for building scalable, high-performance software. I specialize in shipping production-grade backends with <span className="text-white font-medium">Java & Spring Boot</span>, and crafting clean, dynamic <span className="text-white font-medium">React</span> frontends.
+              My name is Ruvinda Shaluka. I am a Full-Stack Engineer undergrad with a passion for building scalable, high-performance software. I specialize in shipping production-grade backends with <span className="text-white font-semibold">Java & Spring Boot</span>, and crafting clean, dynamic <span className="text-white font-semibold">React</span> frontends.
             </p>
             <p>
-              My greatest strength is architectural awareness, which enables me to permanently streamline infrastructure and applications. I am enthusiastic, always trying to learn, and I love creating products that are truly high-quality and unique. I also share my technical journey and insights by writing articles on Medium.
+              My greatest strength is architectural awareness, which enables me to permanently streamline infrastructure and applications. I am enthusiastic, always trying to learn, and I love creating products that are truly high-quality and unique.
             </p>
           </motion.div>
 
@@ -130,7 +132,7 @@ export default function About() {
           whileInView={{ opacity: 1, filter: 'blur(0px)' }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          className="flex-1 w-full relative h-[500px] sm:h-[600px] lg:h-[800px] lg:-my-32 flex justify-end"
+          className="flex-1 w-full relative h-[350px] sm:h-[450px] lg:h-[800px] lg:-my-32 flex justify-end"
         >
           {/* Using next/image for portrait */}
           <div className="relative w-full h-full max-w-2xl">

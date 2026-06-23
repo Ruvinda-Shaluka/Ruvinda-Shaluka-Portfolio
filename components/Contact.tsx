@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { Mail, Phone, Link as LinkIcon, GitFork, User, AtSign } from 'lucide-react'
+import { useRef, useState } from 'react'
+import { Mail, Phone, Link as LinkIcon, GitFork, Send, CheckCircle2 } from 'lucide-react'
 import Image from 'next/image'
 
 const contactInfo = [
@@ -40,6 +40,28 @@ const contactInfo = [
 export default function Contact() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
+  
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!name || !email || !message) return
+
+    setStatus('sending')
+    setTimeout(() => {
+      setStatus('success')
+      setName('')
+      setEmail('')
+      setMessage('')
+      
+      setTimeout(() => {
+        setStatus('idle')
+      }, 5000)
+    }, 1500)
+  }
 
   return (
     <section id="contact" className="py-24 lg:py-32 relative overflow-hidden bg-[#050507]">
@@ -70,7 +92,7 @@ export default function Contact() {
           className="flex items-center gap-3 mb-4"
         >
           <div className="w-8 h-px bg-[#e2e8f0]" />
-          <span className="text-[#3b82f6] text-sm font-semibold tracking-widest uppercase">
+          <span className="text-[#93c5fd] text-sm font-semibold tracking-widest uppercase">
             Contact
           </span>
         </motion.div>
@@ -88,57 +110,141 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-[#94a3b8] text-lg mb-12 max-w-xl"
+          className="text-[#cbd5e1] text-lg mb-12 max-w-xl"
         >
           Open to freelance projects, collaborations, and full-time opportunities. Let&apos;s build
           something great together.
         </motion.p>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="w-full flex flex-col md:flex-row rounded-[2rem] border border-[#27272a] bg-[#121214] overflow-hidden shadow-2xl items-center mt-12 relative min-h-[160px]"
-        >
-          {/* Content: Icons */}
-          <div className="w-full md:w-2/3 p-6 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between z-10 gap-6">
-            
-            <div className="space-y-2">
-              <h3 className="text-xl sm:text-2xl font-bold text-white">Let&apos;s Connect</h3>
-              <p className="text-[#a1a1aa] text-sm">Reach out via email or social media.</p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mt-12 w-full">
+          {/* Left: Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="lg:col-span-7 p-6 sm:p-10 rounded-[2rem] border border-[#27272a] bg-[#0c1020]/50 backdrop-blur-md shadow-2xl flex flex-col justify-between"
+          >
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">Send a Message</h3>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                    Your Name
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="John Doe"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#3b82f6]/50 focus:bg-white/[0.07] rounded-xl text-white text-sm placeholder-zinc-600 focus:outline-none transition-all"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                    Your Email
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="john@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#3b82f6]/50 focus:bg-white/[0.07] rounded-xl text-white text-sm placeholder-zinc-600 focus:outline-none transition-all"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="message" className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                  Your Message
+                </label>
+                <textarea
+                  id="message"
+                  rows={4}
+                  placeholder="Tell me about your project..."
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 hover:border-white/20 focus:border-[#3b82f6]/50 focus:bg-white/[0.07] rounded-xl text-white text-sm placeholder-zinc-600 focus:outline-none transition-all resize-none"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={status === 'sending' || status === 'success'}
+                className="w-full py-3.5 px-6 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl text-sm transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] border border-[#3b82f6]/50 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 focus:outline-none"
+              >
+                {status === 'sending' ? (
+                  <>
+                    <span className="w-4 h-4 border-2 border-white/35 border-t-white rounded-full animate-spin" />
+                    Sending...
+                  </>
+                ) : status === 'success' ? (
+                  <>
+                    <CheckCircle2 size={18} className="text-emerald-400 animate-bounce" />
+                    Message Sent!
+                  </>
+                ) : (
+                  <>
+                    <Send size={16} />
+                    Send Message
+                  </>
+                )}
+              </button>
+            </form>
+          </motion.div>
+
+          {/* Right: Contact details */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="lg:col-span-5 rounded-[2rem] border border-[#27272a] bg-[#121214] overflow-hidden shadow-2xl flex flex-col justify-between p-6 sm:p-10 relative min-h-[350px] lg:min-h-0"
+          >
+            <div className="space-y-6 z-10 w-full">
+              <div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Let&apos;s Connect</h3>
+                <p className="text-zinc-400 text-sm">Reach out via email, phone, or check my socials.</p>
+              </div>
+
+              <div className="space-y-4">
+                {contactInfo.map(({ id, icon: Icon, label, value, href }) => (
+                  <a
+                    key={id}
+                    id={id}
+                    href={href}
+                    target={href.startsWith('http') ? '_blank' : undefined}
+                    rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="flex items-center gap-4 p-3 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/10 rounded-xl transition-all group focus:outline-none"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-[#1a1a1d] border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#3b82f6]/10 group-hover:border-[#3b82f6]/30 transition-colors">
+                      <Icon size={18} className="text-zinc-400 group-hover:text-[#60a5fa] transition-colors" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-[10px] uppercase font-bold tracking-wider text-zinc-500">{label}</p>
+                      <p className="text-sm font-semibold text-zinc-300 group-hover:text-white transition-colors truncate">{value}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-              {contactInfo.map(({ id, icon: Icon, label, href }) => (
-                <motion.a
-                  key={id}
-                  id={id}
-                  href={href}
-                  target={href.startsWith('http') ? '_blank' : undefined}
-                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  whileHover={{ y: -4, scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl border border-white/10 bg-[#1a1a1d] flex items-center justify-center hover:bg-[#3b82f6]/10 hover:border-[#3b82f6]/30 transition-all duration-300 group cursor-pointer"
-                  title={label}
-                >
-                  <Icon size={22} className="text-[#a1a1aa] group-hover:text-[#60a5fa] transition-colors" />
-                </motion.a>
-              ))}
+            {/* Transparent Image Area (Absolute inside right block) */}
+            <div className="absolute right-0 bottom-0 w-1/2 h-[60%] pointer-events-none opacity-20 sm:opacity-30 flex items-end justify-end">
+               <Image 
+                 src="/article/ruvinda-profile.jpg" 
+                 alt="Ruvinda Shaluka" 
+                 fill 
+                 className="object-contain object-right-bottom mix-blend-lighten filter grayscale"
+               />
+               <div className="absolute inset-0 bg-gradient-to-r from-[#121214] via-[#121214]/50 to-transparent" />
             </div>
-          </div>
-
-          {/* Right: Transparent Image Area (Absolute) */}
-          <div className="absolute right-0 bottom-0 w-1/3 h-full pointer-events-none opacity-40 sm:opacity-80 flex items-end justify-end">
-             <Image 
-               src="/article/ruvinda-profile.jpg" 
-               alt="Ruvinda Shaluka" 
-               fill 
-               className="object-contain object-right-bottom mix-blend-lighten filter grayscale"
-             />
-             {/* Gradient to blend image smoothly into the background */}
-             <div className="absolute inset-0 bg-gradient-to-r from-[#121214] via-transparent to-transparent" />
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -7,7 +7,7 @@
   --color-accent: #3b82f6;
   --color-accent-hover: #2563eb;
   --color-text-primary: #ffffff;
-  --color-text-muted: #94a3b8;
+  --color-text-muted: #cbd5e1;
   --color-text-subtle: #475569;
 }
 
@@ -108,4 +108,10 @@ body {
   background-color: rgba(59,130,246,0.1);
   border: 1px solid rgba(59,130,246,0.25);
   color: #93c5fd; letter-spacing: 0.025em;
+}
+
+/* Global focus outlines for accessibility */
+*:focus-visible {
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: 4px !important;
 }
