@@ -10,7 +10,6 @@ const navLinks = [
   { label: 'ABOUT', href: '#about' },
   { label: 'SKILLS', href: '#skills' },
   { label: 'PROJECTS', href: '#projects' },
-  { label: 'CONTACT', href: '#contact' },
 ]
 
 export default function Navbar() {
@@ -76,18 +75,20 @@ export default function Navbar() {
         <div className="px-5 md:px-8">
           <div className="flex items-center justify-between h-16">
             
-            {/* Logo (Left) */}
-            <motion.button
-              onClick={() => scrollToSection('#hero')}
-              className="flex items-center justify-center group cursor-pointer py-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Image src="/logo/keyboard-r.png" alt="Logo" width={42} height={42} className="drop-shadow-[0_0_8px_rgba(59,130,246,0.4)] object-contain" />
-            </motion.button>
+            {/* Logo (Left Column) */}
+            <div className="flex-1 flex justify-start">
+              <motion.button
+                onClick={() => scrollToSection('#hero')}
+                className="flex items-center justify-center group cursor-pointer py-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Image src="/logo/keyboard-r.png" alt="Logo" width={48} height={48} className="drop-shadow-[0_0_8px_rgba(59,130,246,0.4)] object-contain" />
+              </motion.button>
+            </div>
 
-            {/* Desktop Nav (Right) */}
-            <div className="hidden md:flex items-center gap-1">
+            {/* Desktop Nav (Center Column) */}
+            <div className="hidden md:flex items-center justify-center gap-1">
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href.replace('#', '')
                 return (
@@ -118,24 +119,28 @@ export default function Navbar() {
                   </button>
                 )
               })}
+            </div>
+
+            {/* Desktop Action & Mobile Menu (Right Column) */}
+            <div className="flex-1 flex justify-end items-center">
               <button
                 onClick={() => scrollToSection('#contact')}
-                className="ml-3 px-4 py-2 border border-white/10 hover:border-white/30 bg-white/5 hover:bg-white/10 text-white text-[11px] font-bold tracking-wider rounded-xl transition-all cursor-pointer focus:outline-none"
+                className="hidden md:block px-4 py-2 border border-white/10 hover:border-white/30 bg-white/5 hover:bg-white/10 text-white text-[11px] font-bold tracking-wider rounded-xl transition-all cursor-pointer focus:outline-none"
               >
                 LET&apos;S TALK
               </button>
-            </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden flex items-center">
-              <button
-                id="mobile-menu-btn"
-                onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-lg text-slate-300 hover:text-white transition-colors focus:outline-none cursor-pointer"
-                aria-label="Toggle menu"
-              >
-                {isOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
+              {/* Mobile menu button */}
+              <div className="md:hidden flex items-center">
+                <button
+                  id="mobile-menu-btn"
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="p-2 rounded-lg text-slate-300 hover:text-white transition-colors focus:outline-none cursor-pointer"
+                  aria-label="Toggle menu"
+                >
+                  {isOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
+              </div>
             </div>
           </div>
         </div>

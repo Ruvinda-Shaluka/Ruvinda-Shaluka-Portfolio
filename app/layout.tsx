@@ -34,6 +34,8 @@ export const metadata: Metadata = {
   creator: 'Ruvinda Shaluka',
   icons: {
     icon: '/logo/letter-r.png',
+    shortcut: '/logo/letter-r.png',
+    apple: '/logo/letter-r.png',
   },
   openGraph: {
     title: 'Ruvinda Shaluka — Full-Stack Developer',
